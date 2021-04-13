@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  父节点 最近的父节点parentNode
+  子节点 父节点.childNodes 这里把文本节点也算上去了
+         父节点.children 最常用这个
+  兄弟节点 nextSibing 下一个兄弟节点 包括元素节点 文本节点
+          previousSibling 
+          nextElementSibling 得到下一个兄弟元素节点
+          previousElementSibling
+  创建节点: var li = document.createElement('li');
+  添加节点 node.appendChild(child) node是父级
+           node.insertBefore(要添加的，要在那添加的抢位置)
+  删除节点 node.removeChild(child) 从DOM中删除一个子节点 返回删除的节点
+  
+</body>
+</html>

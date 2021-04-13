@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  js是单线程 ，同一时间只能做一件事 现在js可以异步
+  同步和异步
+  同步任务都在主线程上执行，形成一个执行栈
+  异步任务
+  js的异步是通过回调函数实现的
+  一般来说异步有以下三种类型
+  1.普通事件，如click resize
+  2.资源加载,如load error
+  3.定时器 setInterval setTimeout
+  js执行机制
+  1.先执行执行栈中的同步任务
+  2.遇到异步任务（回调函数）就放入任务队列
+  3.一旦所有同步任务都执行完，就会按次序读取任务队列中的异步任务
+</body>
+</html>

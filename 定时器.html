@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  1.setTimeout定时器
+  window.setTimeout(调用函数，延迟毫秒数) window在调用的时候可以省略
+  延迟时间是毫秒 但是可以省略
+  调用函数也可写函数名，在外面写函数
+  <script>
+    setTimeout(function(){
+
+    },2000)
+    function callback(){
+
+    }
+    setTimeout(callback,3000)
+    //可以给定时器取不同的名字来区别不同定时器
+    var time1 =   setTimeout(callback,3000);
+    var time2 =   setTimeout(callback,3000);
+    //清除定时器 clearTimeout
+ btn.addEventListener('click',function(){
+   clearTimeout(time1);
+ })
+  </script>
+
+  2.window.setInterval(回调函数，间隔毫秒数)定时器 
+setInterval(function(),1000);
+clearInterval(定时器名)
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button></button>
+  <button></button>
+  <button></button>
+  <script>
+    var btns = document.querySelectorAll('button');
+    for(var i = 0;i<btn.length;i++)
+    {
+      btn[i].onclick = function(){
+        //先把所有按钮颜色去掉
+        for(var i = 0;i<btn.length;i++)
+        {
+          btn[i].style.backgroundColor='';
+        }
+        this.style.backgroundColor='pink';
+      }
+      // 鼠标经过事件
+      btn[i].onmouseover = function(){
+        this.className='bg';
+      }
+      //鼠标离开
+      btn[i].onmouseout= function(){
+        this.className='bg2';
+      }
+    }
+  </script>
+</body>
+</html>

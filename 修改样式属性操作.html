@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .addClass{
+      width: 400px;
+      height: 400px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  通过js修改样式
+  1.行内样式 element.style
+  2.类名样式操作 element.className
+  <div></div>
+  <script>
+    var div = document.querySelector('div');
+    div.onclick = function(){
+      this.style.backgroundColor = 'purple';
+      this.style.width = '250px';
+      this.style.display = 'none';
+      this.style.color='red';
+      //可以通过className更改元素样式 如果原来有类名则会覆盖原来的类名
+      //如果想保留原来的类名，可以直接也把原来的类名加上 this.className = 'first addClass'
+      this.className='addClass';
+    }
+  </script>
+ 
+</body>
+</html>

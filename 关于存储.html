@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  本地存储特性
+1.数据存储在用户浏览器中
+2.设置 读取方便 甚至页面刷新也不丢失数据
+3.容量较大 sessionStorage 5M
+           localStorage 20M
+4.只能存储字符串 可以将对象json.stringify()编码后存储
+window.sessionStorage
+1.生命周期为关闭浏览器窗口
+2.在同一个窗口下数据可共享
+3.以键值对形式存储 sessionStorage.setItem(key,value)
+sessionStorage.getItem(key)获取
+sessionStorage.removeItem(key)移除
+
+localSStorgae
+1.生命周期永久生效，除非手动删除
+2.可以多窗口（页面）共享（同一浏览器可以共享）
+3.以键值对形式存储
+</body>
+</html>

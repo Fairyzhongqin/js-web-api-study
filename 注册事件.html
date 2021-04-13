@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  1.传统注册方式 利用on开头
+    btn.onclick = function(){}
+    特点：注册事件的唯一性  同一个元素的同一个事件只能设置一个处理函数 最后注册的处理函数会覆盖之前的处理函数
+  2.方法监听注册方式 addEventListener()
+    特点：同一个元素同一个事件可以注册多个监听器
+    eventTarget.addEventListener(type,listener)
+type 是事件类型字符串 如click mouseover  listener 监听函数
+eg btns[1].addEventListener('click',function(){
+
+})
+解绑事件
+1.传统事件
+ divs[0].onclick = function(){
+   divs[0].onclick = null;
+ }
+ 2.监听事件移除
+ divs[1].addEventListener('click',fn)
+ function fn(){
+   alert(23)；
+   divs[1].removeEventListener('click',fn)
+ }
+
+</body>
+</html>
