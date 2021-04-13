@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 外部 -->
+<!-- <script src="my.js"></script> -->
+<body>
+  <div>
+    js分为js语法 DOM页面文档对象模型 BOM浏览器对象模型
+    浏览器分为两部分：渲染引擎用来解析html css js引擎用来执行js 逐行解释执行
+    js写的位置：行内 内嵌 外部
+    <!-- <input type="button" value="唐伯虎" onclick="alert('球星')"> -->
+    js的变量数据类型是只有程序在运行过程中，根据等号右边的值来确定
+    数据类型分为两大类：简单数据类型 复杂数据类型
+    简单数据类型：number boolean string undefined null
+    isNaN()这个方法判断非数字 并且返回一个值 如果是数字返回false 否则返回true
+    eg:isNaN(12) FALSE
+    获取字符串长度
+    var str='my name' console.log(str.length);
+    字符串拼接：字符串+任何类型=拼接后的字符串
+    用typeof来检测数据类型
+    var num =10; console.log(typeof num);
+    数据类型转化：
+    转化字符串类型：toString() 转化为字符串 eg var num =1;num.toString() 2.String String(num) 3.加号拼接字符串
+    转化数字型：
+    转化为布尔型：Boolean()函数 代表空 否定的值都会被转化为flase
+    将字符串转化为数字：parseInt(string) eg paresInt('78') Number('12')
+    逻辑运算符： && || ！
+    三元表达式：条件表达式？表达式1：表达式2
+    断点调式：在检查里点击代码行 刷新 点下一步
+    continue跟break区别：continue 关键字用于跳出本次循环 继续下一次循环 break 跳出整个循环
+    创建数组
+    1.利用new关键字 var 数组名 = new Array() eg var arr = new Array(1,2,3)
+    2.利用数组字面量
+      var arr =[] 空数组
+      var arr =[1,2,'pink']
+    获取数组元素 数组名[数组元素]
+    获取数组长度 arr.length
+    检测是否为数组: instanceof arr instanceof Array 或者Array.isArray(参数)
+    添加数组元素 push() 在数组末尾添加一个或多个数 eg:arr.push(4,'ds'); unshift 在数组开头添加一个或多个
+                pop()删除数组里最后一个元素 eg arr.pop() 返回值是删除的那个元素 shift() 删除第一个元素
+    翻转数组 arr.reverse()
+    数组排序 arr.sort(function(a,b){
+      return a-b;//按升序 b-a降序
+    })
+    根据元素获取索引:indexOf() 查找数组中给定元素的第一个索引 lastindexOf()最后一个
+    数组转化为字符串 toString() 把数组转化为字符串，逗号分隔每一项 join('分隔符')
+    eg.arr.toString() arr.join('-')
+    
+
+ 函数使用：声明函数 调用函数
+             声明函数 function 函数名（）{}
+             调用函数
+             return 是终止函数的作用 只能返回一个值 ，有多个就返回最后一个
+             不确定有多少个参数传递时，可以用arguments来获取，它是一个内置对象，可以获取对象传递的所有实参
+             arguments展示的是个伪数组，具有length属性 按索引方式存储数据，不具备数组的push pop方法
+             函数表达式的方式声明函数:var 变量名 = function(){} 变量名（）
+    作用域：根据作用域不同 分为全局作用域和局部作用域
+            从执行效率来看全局变量和局部变量：全局变量只有在浏览器关闭时才会销毁，比较占内存资源，局部变量在程序执行完毕才会被销毁，比较节约内存资源
+            js在es6新增块级作用域 {} {}里的变量外部不能调用
+            作用域链：内部函数访问外部函数，采取的是作用域链方式，就近原则 
+  预解析：js引擎会把js里面所有的var和function 提升到当前作用域的最前面
+          然后按照代码执行顺序从上往下执行
+          预解析分为变量预解析（变量提升）和函数预解析（函数提升）
+          变量提升：把所有的变量声明提升到当前作用域的最前面，不提升赋值操作
+          函数提升：把当前函数声明提升到最前面
+  对象：包含属性和方法
+  创建对象的方式：1.利用字面量创建对象 
+                   var obj = {}//创建浏览个空对象
+                   里面的属性或者方法采取键值对形式
+                   调用采用obj.属性名
+                   var obj={
+                     uname:'xxx',
+                     age:12,
+                     sayhi:function(){
+                       console.log('ji');
+                     }
+                   }
+                 2.利用new Object创建对象
+                   var obj = new Object();
+                   obj.name ='sd';
+                   obj.sayHi=function(){
+                     console.log('ja');
+                   }
+                 3.利用构造函数创建对象
+                   构造函数(构造函数名首字母大写)：就是把我们对象里一些相同的属性和方法抽象出来封装到函数里
+                   funtion Star(name,age,sex){
+                     this.name = name;
+                     this.age = age;
+                     this.sex = sex;
+                   }
+                   var ldh = new star('sss',12,'男')
+                   new关键字执行过程：
+                   1.new 构造函数在内存中创建了一个空对象
+                   2.this就会指向刚创建的空对象
+                   3.执行构造函数的代码，给这个空对象添加属性和方法
+                   4.返回这个对象
+
+                   用for in 遍历对象
+                   for(var k in obj)
+                   {
+                     console.log(k,obj[k]); k是属性名 obj[k]是属性值
+
+                   }
+js对象分为三种：自定义对象 内置对象 浏览器对象
+常见的内置对象有可查mdn文档 Math Date() String
+eg function(){
+  var time = new Date();
+  var h = time.getHours();
+  h = h<10? '0'+h:h;
+  var m = time.getMinutes();
+  m = m<10?'0'+m:m;
+  return h+':'+m;
+}
+字符串对象 根据字符返回位置 eg:str.indexOf('春') str.indexOf('要找的字符',起始位置)
+           根据位置返回字符 str.charAt(index)
+           拼接字符串 concat('字符串1','字符串2')
+           截取字符串 substr(start,length)
+           替换字符串 replace('被替换的字符','替换为新的字符')
+           字符串转化为数组 str.split('分隔符')
+构造函数是泛指的某一大类 对象是具体的事物方法
+
+简单数据类型和复杂数据类型区别
+简单数据类型在内存中存的是值本身 string number boolean undefined null
+复杂数据类型 用new关键字创建的对象 如object array date
+简单数据类型放栈 复杂数据类型放堆（在栈里面放地址 数据放堆里）
+  </div>
+</body>
+<!-- 内嵌 -->
+<script>
+  //  prompt('请输入您的年龄');
+  //  alert('输出的，展示给用户的')
+  //  console.log('控制台输出，给程序员用的');
+  //  var age;
+  //  age=18;
+  //  console.log(age);
+   var myname = prompt('请输入名字');
+   console.log(myname);
+   /**只声明不复值结果是undefined
+   var sex;
+   console.log(sex);ndefined**/
+
+
+</script>
+</html>
