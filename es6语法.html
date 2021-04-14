@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  var 存在的问题：变量提升 没有块级作用域
+ 1. es6新增 let 不存在变量提升 有块级作用域
+2.  const 定义常量 不存在变量提升 有块级作用域 无法被重新赋值
+  3.解构赋值 把对象中的属性当作变量解构出来
+  eg let user={
+    name:'zs',
+    age:20,
+    gender:'男'
+  }
+  let {name} =user
+  console.log(name)
+  解构赋值还可在解构iude时候重命名
+  let {name:username,age}=user
+  console.log(username,age)
+4.箭头函数
+把方法定义为箭头函数
+(参数列表)=>{函数代码}
+箭头函数本质是匿名函数 
+箭头函数内部this 永远和箭头函数外部this保持一致
+eg document.querySelector('div').onclick=function(){
+  setTimeout(()=>{
+    <!-- this指向外部div -->
+    this.style.backgroundColor='red';
+  },1000)
+}
+eg var add=(x,y)=>{return x+y;}
+console.log(add(1,2))
+
+</body>
+</html>
